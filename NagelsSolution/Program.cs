@@ -33,6 +33,8 @@ namespace NagelsCodingProblem
 
             textA = TextValue(hexFormatted1[1]);
 
+            shortA = ShortValue(hexFormatted1[2]);
+
         }
 
         /// <summary>
@@ -161,6 +163,18 @@ namespace NagelsCodingProblem
             string stringValue = Encoding.ASCII.GetString(data);
 
             return stringValue;
+        }
+
+        public static short ShortValue(string hexString)
+        {
+            //var data = StringToByteArray(hexString);
+
+            // set hex as bit array -->
+            var bits = Convert.ToString(Convert.ToInt32(hexString.ToString(), 16), 2).PadLeft(4, '0');
+            // convert bit values to short value -->
+            short shortValue = Convert.ToInt16(bits, 2);
+
+            return shortValue;
         }
     }
 }
