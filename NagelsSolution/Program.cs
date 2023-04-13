@@ -23,6 +23,11 @@
             string hex1 = "A 4 E 6 1 6 7 6 5 6 C 7 3 2 0 5 5 4 B 2 0 4 C 7 4 6 4 2 E 2 E 2 E 2 E 2 E 2 E 2 E 3 9 C 1 5 A F 4 3";
             string[] hex1Values = hex1.Split(" ");
             var hexFormatted1 = FormatHex(hex1Values);
+            bitA = BoolCheck1(hexFormatted1[0]);
+            bitB = BoolCheck2(hexFormatted1[0]);
+            bitC = BoolCheck3(hexFormatted1[0]);
+            bitD = BoolCheck4(hexFormatted1[0]);
+
         }
 
         /// <summary>
@@ -87,5 +92,58 @@
             return bytes;
         }
 
+        public static bool BoolCheck1(string hexString)
+        {
+            // set hex as a byte array -->
+            byte[] data = StringToByteArray(hexString);
+            // set byte array as bit array -->
+            var bits = String.Join(String.Empty, hexString.Select(c => Convert.ToString(Convert.ToUInt32(c.ToString(), 16), 2).PadLeft(4, '0')));
+
+            if (bits[0] == '1')
+            {
+                return true;
+            }
+
+            return false;
+        }
+
+        public static bool BoolCheck2(string hexString)
+        {
+            var data = StringToByteArray(hexString);
+            var bits = String.Join(String.Empty, hexString.Select(c => Convert.ToString(Convert.ToUInt32(c.ToString(), 16), 2).PadLeft(4, '0')));
+
+            if (bits[1] == '1')
+            {
+                return true;
+            }
+
+            return false;
+        }
+
+        public static bool BoolCheck3(string hexString)
+        {
+            var data = StringToByteArray(hexString);
+            var bits = String.Join(String.Empty, hexString.Select(c => Convert.ToString(Convert.ToUInt32(c.ToString(), 16), 2).PadLeft(4, '0')));
+
+            if (bits[2] == '1')
+            {
+                return true;
+            }
+
+            return false;
+        }
+
+        public static bool BoolCheck4(string hexString)
+        {
+            var data = StringToByteArray(hexString);
+            var bits = String.Join(String.Empty, hexString.Select(c => Convert.ToString(Convert.ToUInt32(c.ToString(), 16), 2).PadLeft(4, '0')));
+
+            if (bits[3] == '1')
+            {
+                return true;
+            }
+
+            return false;
+        }
     }
 }
