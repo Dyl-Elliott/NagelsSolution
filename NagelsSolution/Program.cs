@@ -25,12 +25,17 @@
             var hexFormatted1 = FormatHex(hex1Values);
         }
 
+        /// <summary>
+        /// Method used to format each hex string into its required fields using expected number of bits.
+        /// </summary>
+        /// <param name="hexValues"></param>
+        /// <returns>List of formated hex string.</returns>
         public static List<string> FormatHex(string[] hexValues)
         {
             List<string> formattedHexList = new List<string>();
 
             var tempHex1 = "";
-            // set first hex for the bool representations --> reference - (4 bits per hex)
+            // set first hex for the bool representations --> reference - (4 bits single per hex value)
             for (int i = 0; i < 1; i++)
             {
                 tempHex1 += hexValues[i];
@@ -65,5 +70,22 @@
 
             return formattedHexList;
         }
+
+        /// <summary>
+        /// Convert hex to byte array.
+        /// </summary>
+        /// <param name="hexString"></param>
+        /// <returns>hex string converted to byte array.</returns>
+        public static byte[] StringToByteArray(string hexString)
+        {
+            var bytes = new byte[hexString.Length / 2];
+            for (var i = 0; i < bytes.Length; i++)
+            {
+                bytes[i] = Convert.ToByte(hexString.Substring(i * 2, 2), 16);
+            }
+
+            return bytes;
+        }
+
     }
 }
