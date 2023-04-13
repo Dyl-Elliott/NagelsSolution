@@ -23,6 +23,7 @@ namespace NagelsCodingProblem
             short shortA = 0;
             DateTime dateTimeA = DateTime.MinValue;
 
+            Console.WriteLine("------------------------Hex1------------------------");
             string hex1 = "A 4 E 6 1 6 7 6 5 6 C 7 3 2 0 5 5 4 B 2 0 4 C 7 4 6 4 2 E 2 E 2 E 2 E 2 E 2 E 2 E 3 9 C 1 5 A F 4 3";
             string[] hex1Values = hex1.Split(" ");
             var hexFormatted1 = FormatHex(hex1Values);
@@ -30,13 +31,77 @@ namespace NagelsCodingProblem
             bitB = BoolCheck2(hexFormatted1[0]);
             bitC = BoolCheck3(hexFormatted1[0]);
             bitD = BoolCheck4(hexFormatted1[0]);
-
             textA = TextValue(hexFormatted1[1]);
-
             shortA = ShortValue(hexFormatted1[2]);
-
             dateTimeA = DateTimeValue(hexFormatted1[3]);
+            Console.WriteLine($"HexString = 'A'\nBitA = {bitA}\nBitB = {bitB}\nBitC = {bitC}\nBitD = {bitD}\n" +
+                $"\nHexString = '4E6167656C7320554B204C74642E2E2E2E2E2E2E'\n{textA}\n" +
+                $"\nHexString = '39C1'\nShortA = {shortA}\n" +
+                $"\nHexString = '5AF43'\nDateTimeA = {dateTimeA.ToShortDateString()}\n");
 
+            Console.WriteLine("------------------------Hex2------------------------");
+            string hex2 = "F 4 2 6 1 7 4 7 4 6 C 6 5 2 0 6 F 6 6 2 0 4 8 6 1 7 3 7 4 6 9 6 E 6 7 7 3 2 0 2 0 0 4 2 A 0 5 F 4 8";
+            string[] hex2Values = hex2.Split(" ");
+            var hexFormatted2 = FormatHex(hex2Values);
+            bitA = BoolCheck1(hexFormatted2[0]);
+            bitB = BoolCheck2(hexFormatted2[0]);
+            bitC = BoolCheck3(hexFormatted2[0]);
+            bitD = BoolCheck4(hexFormatted2[0]);
+            textA = TextValue(hexFormatted2[1]);
+            shortA = ShortValue(hexFormatted2[2]);
+            dateTimeA = DateTimeValue(hexFormatted2[3]);
+            Console.WriteLine($"HexString = 'F'\nBitA = {bitA}\nBitB = {bitB}\nBitC = {bitC}\nBitD = {bitD}\n" +
+                $"\nHexString = '426174746C65206F662048617374696E67732020'\n{textA}\n" +
+                $"\nHexString = '042A'\nShortA = {shortA}\n" +
+                $"\nHexString = '05F48'\nDateTimeA = {dateTimeA.ToShortDateString()} \n");
+
+            Console.WriteLine("------------------------Hex3------------------------");
+            string hex3 = "0 4 1 6 C 6 2 6 5 7 2 7 4 2 0 4 5 6 9 6 E 7 3 7 4 6 5 6 9 6 E 2 0 4 2 6 F 7 2 6 E 2 B 6 7 4 E 6 6 0";
+            string[] hex3Values = hex3.Split(" ");
+            var hexFormatted3 = FormatHex(hex3Values);
+            bitA = BoolCheck1(hexFormatted3[0]);
+            bitB = BoolCheck2(hexFormatted3[0]);
+            bitC = BoolCheck3(hexFormatted3[0]);
+            bitD = BoolCheck4(hexFormatted3[0]);
+            textA = TextValue(hexFormatted3[1]);
+            shortA = ShortValue(hexFormatted3[2]);
+            dateTimeA = DateTimeValue(hexFormatted3[3]);
+            Console.WriteLine($"HexString = '0'\nBitA = {bitA}\nBitB = {bitB}\nBitC = {bitC}\nBitD = {bitD}\n" +
+                $"\nHexString = '416C626572742045696E737465696E20426F726E'\n{textA}\n" +
+                $"\nHexString = '2B67'\nShortA = {shortA}\n" +
+                $"\nHexString = '4E660'\nDateTimeA = {dateTimeA.ToShortDateString()} \n");
+
+            Console.WriteLine("------------------------Hex4------------------------");
+            string hex4 = "C 4 1 6 C 6 1 6 E 2 0 5 4 7 5 7 2 6 9 6 E 6 7 2 0 4 5 6 E 6 9 6 7 6 D 6 1 2 0 2 0 0 8 A E 5 1 5 D A";
+            string[] hex4Values = hex4.Split(" ");
+            var hexFormatted4 = FormatHex(hex4Values);
+            bitA = BoolCheck1(hexFormatted4[0]);
+            bitB = BoolCheck2(hexFormatted4[0]);
+            bitC = BoolCheck3(hexFormatted4[0]);
+            bitD = BoolCheck4(hexFormatted4[0]);
+            textA = TextValue(hexFormatted4[1]);
+            shortA = ShortValue(hexFormatted4[2]);
+            dateTimeA = DateTimeValue(hexFormatted4[3]);
+            Console.WriteLine($"HexString = 'C'\nBitA = {bitA}\nBitB = {bitB}\nBitC = {bitC}\nBitD = {bitD}\n" +
+                $"\nHexString = '416C616E20547572696E6720456E69676D612020'\n{textA}\n" +
+                $"\nHexString = '08AE'\nShortA = {shortA}\n" +
+                $"\nHexString = '515DA'\nDateTimeA = {dateTimeA.ToShortDateString()} \n");
+
+            Console.WriteLine("------------------------Hex5------------------------");
+            string hex5 = "9 4 3 6 8 6 5 7 2 6 E 6 F 6 2 7 9 6 C 2 0 4 4 6 9 7 3 6 1 7 3 7 4 6 5 7 2 2 1 2 1 2 3 A 3 5 7 F 3 4";
+            string[] hex5Values = hex5.Split(" ");
+            var hexFormatted5 = FormatHex(hex5Values);
+            bitA = BoolCheck1(hexFormatted5[0]);
+            bitB = BoolCheck2(hexFormatted5[0]);
+            bitC = BoolCheck3(hexFormatted5[0]);
+            bitD = BoolCheck4(hexFormatted5[0]);
+            textA = TextValue(hexFormatted5[1]);
+            shortA = ShortValue(hexFormatted5[2]);
+            dateTimeA = DateTimeValue(hexFormatted5[3]);
+            Console.WriteLine($"HexString = '9'\nBitA = {bitA}\nBitB = {bitB}\nBitC = {bitC}\nBitD = {bitD}\n" +
+                $"\nHexString = '436865726E6F62796C2044697361737465722121'\n{textA}\n" +
+                $"\nHexString = '23A3'\nShortA = {shortA}\n" +
+                $"\nHexString = '57F34'\nDateTimeA = {dateTimeA.ToShortDateString()} \n");
         }
 
         /// <summary>
