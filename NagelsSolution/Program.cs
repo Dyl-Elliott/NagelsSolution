@@ -1,4 +1,7 @@
-﻿namespace NagelsCodingProblem
+﻿using System.Collections;
+using System.Text;
+
+namespace NagelsCodingProblem
 {
     public class Program
     {
@@ -27,6 +30,8 @@
             bitB = BoolCheck2(hexFormatted1[0]);
             bitC = BoolCheck3(hexFormatted1[0]);
             bitD = BoolCheck4(hexFormatted1[0]);
+
+            textA = TextValue(hexFormatted1[1]);
 
         }
 
@@ -144,6 +149,18 @@
             }
 
             return false;
+        }
+
+        public static string TextValue(string hexString)
+        {
+            // set hex into a byte array -->
+            var data = StringToByteArray(hexString);
+            // set byte array into bit array -->
+            var bits = new BitArray(data);
+            // convert bits to ASII characters -->
+            string stringValue = Encoding.ASCII.GetString(data);
+
+            return stringValue;
         }
     }
 }
