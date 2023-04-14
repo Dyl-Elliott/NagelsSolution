@@ -34,8 +34,11 @@ namespace NagelsWPFSolution
             // "A" -->
             string hexPart1 = BoolToHex(hexValues);
 
-            // 4E6167656C7320554B204C74642E2E2E2E2E2E2E -->
+            // "4E 61 67 65 6C 73 20 55 4B 20 4C 74 64 2E 2E 2E 2E 2E 2E 2E" -->
             string hexPart2 = TextToHex(hexValues);
+
+            // "39C1" -->
+            string hexPart3 = ShortToHex(hexValues);
         }
 
         /// <summary>
@@ -115,6 +118,19 @@ namespace NagelsWPFSolution
 
             // format hex for output removing "-" -->
             string hexOutput = hexText.Replace("-", " ");
+
+            return hexOutput;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="hexString"></param>
+        /// <returns></returns>
+        private static string ShortToHex(List<object> hexString)
+        {
+            short numberInput = (short)hexString[5];
+            string hexOutput = numberInput.ToString("X");
 
             return hexOutput;
         }
