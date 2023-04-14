@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Text;
 using System.Windows;
 
 namespace NagelsWPFSolution
@@ -32,6 +33,9 @@ namespace NagelsWPFSolution
 
             // "A" -->
             string hexPart1 = BoolToHex(hexValues);
+
+            // 4E6167656C7320554B204C74642E2E2E2E2E2E2E -->
+            string hexPart2 = TextToHex(hexValues);
         }
 
         /// <summary>
@@ -89,7 +93,28 @@ namespace NagelsWPFSolution
 
             string boolHex = $"{hex1}{hex2}{hex3}{hex4}";
 
+            // convert bits to hex -->
             string hexOutput = Convert.ToInt16(boolHex, 2).ToString("X");
+
+            return hexOutput;
+        }
+
+        /// <summary>
+        /// Converts placeholder text provided from within UI to hex values.
+        /// </summary>
+        /// <param name="hexString"></param>
+        /// <returns>Hex values for given text entry.</returns>
+        private static string TextToHex(List<object> hexString)
+        {
+            string textInput = (string)hexString[4];
+
+            // convert string to byte array -->
+            byte[] bytes = Encoding.Default.GetBytes(textInput);
+            // convert byte array values to hex -->
+            string hexText = BitConverter.ToString(bytes);
+
+            // format hex for output removing "-" -->
+            string hexOutput = hexText.Replace("-", " ");
 
             return hexOutput;
         }
