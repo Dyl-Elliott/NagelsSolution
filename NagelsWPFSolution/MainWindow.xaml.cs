@@ -42,6 +42,13 @@ namespace NagelsWPFSolution
 
             // 5AF43 -->
             string hexPart4 = DateTimeToHex(hexValues);
+
+            // fully collected hex values -->
+            string hexResult = $"{hexPart1} {hexPart2} {hexPart3} {hexPart4}".Replace(" ", "");
+            string hexFinal = FormatHexString(hexResult);
+
+            // output to UI -->
+            HexOutput.Items.Add(hexFinal);
         }
 
         /// <summary>
@@ -161,6 +168,28 @@ namespace NagelsWPFSolution
             var hexOutput = dayDifference.ToString("X");
 
             return hexOutput;
+        }
+
+        /// <summary>
+        /// Formats the hex string into bits of 8.
+        /// </summary>
+        /// <param name="hexResult"></param>
+        /// <returns>Hex string converted to corresponding string layout.</returns>
+        public static string FormatHexString(string hexResult)
+        {
+            StringBuilder buffer = new StringBuilder(hexResult.Length * 3 / 2);
+            for (int i = 0; i < hexResult.Length; i++)
+            {
+                if ((i > 0) & (i % 2 == 0))
+                {
+                    buffer.Append(' ');
+                }
+
+                buffer.Append(hexResult[i]);
+            }
+
+            string output = buffer.ToString().Trim();
+            return output;
         }
     }
 }
