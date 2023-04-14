@@ -39,6 +39,9 @@ namespace NagelsWPFSolution
 
             // "39C1" -->
             string hexPart3 = ShortToHex(hexValues);
+
+            // 5AF43 -->
+            string hexPart4 = DateTimeToHex(hexValues);
         }
 
         /// <summary>
@@ -123,14 +126,39 @@ namespace NagelsWPFSolution
         }
 
         /// <summary>
-        /// 
+        /// Converts short value provided from within UI to hex values.
         /// </summary>
         /// <param name="hexString"></param>
-        /// <returns></returns>
+        /// <returns>Hex value for given text entry.</returns>
         private static string ShortToHex(List<object> hexString)
         {
             short numberInput = (short)hexString[5];
+
+            // converting short value to hex -->
             string hexOutput = numberInput.ToString("X");
+
+            return hexOutput;
+        }
+
+        /// <summary>
+        /// Converts DateTime value provided from within UI to hex values.
+        /// </summary>
+        /// <param name="hexString"></param>
+        /// <returns>Hex value for given DateTime entry.</returns>
+        private static string DateTimeToHex(List<object> hexString)
+        {
+            // capture UI input datetime -->
+            DateTime userinput = (DateTime)hexString[6];
+            // expected datetime start point -->
+            DateTime baseDate = new(1000, 01, 01);
+
+            // find the difference between input date and standard datetime -->
+            TimeSpan dateDifference = userinput - baseDate;
+            // cast total date difference to int type -->
+            int dayDifference = (int)dateDifference.TotalDays;
+
+            // convert int value to hex -->
+            var hexOutput = dayDifference.ToString("X");
 
             return hexOutput;
         }
