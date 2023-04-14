@@ -1,0 +1,31 @@
+﻿<Window x:Class="NagelsWPFSolution.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:NagelsWPFSolution"
+        mc:Ignorable="d"
+        Title="Hex Convertor" Height="500" Width="800">
+    <Grid>
+        <StackPanel>
+            <TextBlock x:Name="BitA">BitA:</TextBlock>
+            <TextBox x:Name="BitATextField">True</TextBox>
+            <TextBlock x:Name="BitB">BitB:</TextBlock>
+            <TextBox x:Name="BitBTextField">False</TextBox>
+            <TextBlock x:Name="BitC">BitC:</TextBlock>
+            <TextBox x:Name="BitCTextField">True</TextBox>
+            <TextBlock x:Name="BitD">BitD:</TextBlock>
+            <TextBox x:Name="BitDTextField">False</TextBox>
+            <TextBlock x:Name="TextA">TextA:</TextBlock>
+            <TextBox x:Name="TextATextField">Nagels UK Ltd.......</TextBox>
+            <TextBlock x:Name="ShortA">ShortA:</TextBlock>
+            <TextBox x:Name="ShortATextField">14785</TextBox>
+            <TextBlock x:Name="DateTimeA">DateTimeA:</TextBlock>
+            <TextBox x:Name="DateTimeATextField">01/01/2020</TextBox>
+            <Button x:Name="HexButton" Width="150" Height="50" Cursor="Hand" Click="HexButtonClick" Margin="30">Generate Hex String</Button>
+            <TextBlock x:Name="HexOutput">Hex String Output:</TextBlock>
+            <ListBox Height="30"/>
+        </StackPanel>
+        
+    </Grid>
+</Window>
