@@ -23,8 +23,8 @@
             <TextBlock x:Name="DateTimeA">DateTimeA:</TextBlock>
             <TextBox x:Name="DateTimeATextField">01/01/2020</TextBox>
             <Button x:Name="HexButton" Width="150" Height="50" Cursor="Hand" Click="HexButtonClick" Margin="30">Generate Hex String</Button>
-            <TextBlock x:Name="HexOutput">Hex String Output:</TextBlock>
-            <ListBox Height="30"/>
+            <TextBlock x:Name="HexOutputText">Hex String Output:</TextBlock>
+            <ListBox x:Name="HexOutput" Height="30"/>
         </StackPanel>
         
     </Grid>
