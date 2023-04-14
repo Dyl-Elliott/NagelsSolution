@@ -29,8 +29,16 @@ namespace NagelsWPFSolution
 
             // generate a hexadecimal List<object> with UI data -->
             List<object> hexValues = HexVariableGenerator(hexString);
+
+            // "A" -->
+            string hexPart1 = BoolToHex(hexValues);
         }
 
+        /// <summary>
+        /// Format a List<object> into relative variable types.
+        /// </summary>
+        /// <param name="hexString"></param>
+        /// <returns>A List<object> which contains all UI entries correctly stored.</returns>
         private static List<object> HexVariableGenerator(List<string> hexString)
         {
             List<object> output = new List<object>();
@@ -64,6 +72,26 @@ namespace NagelsWPFSolution
             output.Add(dateTimeA);
 
             return output;
+        }
+
+        /// <summary>
+        /// Converts the first 4-bits of the expected hex string given boolean values from UI.
+        /// </summary>
+        /// <param name="hexString"></param>
+        /// <returns>Hex value for first 4-bits of the expected hex string.</returns>
+        private static string BoolToHex(List<object> hexString)
+        {
+            // convert boolean values to single bits -->
+            short hex1 = Convert.ToInt16(hexString[0]);
+            short hex2 = Convert.ToInt16(hexString[1]);
+            short hex3 = Convert.ToInt16(hexString[2]);
+            short hex4 = Convert.ToInt16(hexString[3]);
+
+            string boolHex = $"{hex1}{hex2}{hex3}{hex4}";
+
+            string hexOutput = Convert.ToInt16(boolHex, 2).ToString("X");
+
+            return hexOutput;
         }
     }
 }
