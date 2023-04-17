@@ -10,6 +10,8 @@ namespace NagelsWPFSolution
     /// </summary>
     public partial class MainWindow : Window
     {
+        // working solution
+
         List<string> hexString = new List<string>();
 
         public MainWindow()
