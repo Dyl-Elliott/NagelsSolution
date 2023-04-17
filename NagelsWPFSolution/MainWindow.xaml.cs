@@ -19,6 +19,9 @@ namespace NagelsWPFSolution
 
         private void HexButtonClick(object sender, RoutedEventArgs e)
         {
+            // clear List for next user input set -->
+            hexString.Clear();
+
             // capture field text from UI, store inside hexString List<> -->
             hexString.Add(BitATextField.Text);
             hexString.Add(BitBTextField.Text);
@@ -47,7 +50,8 @@ namespace NagelsWPFSolution
             string hexResult = $"{hexPart1} {hexPart2} {hexPart3} {hexPart4}".Replace(" ", "");
             string hexFinal = FormatHexString(hexResult);
 
-            // output to UI -->
+            // output to UI ListBox -->
+            HexOutput.Items.Clear();
             HexOutput.Items.Add(hexFinal);
         }
 
